@@ -1,5 +1,7 @@
 // One constant for the backend address. Change this one line when you deploy.
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = ["localhost", "127.0.0.1"].includes(location.hostname)
+  ? "http://127.0.0.1:8000"
+  : "https://recipe-explorer-2nkr.onrender.com";
 const MIN_N = 5; // a cuisine needs at least this many matching recipes with a value to be ranked
 const BOOK_KEY = "recipe-explorer-cookbook";
 const BOOK_MAX = 50;
@@ -99,7 +101,7 @@ async function init() {
     summary = await sRes.json();
     recipes = await rRes.json();
   } catch (err) {
-    status.textContent = `Could not load data: ${err.message}. Is the Flask server running on port 8000?`;
+    status.textContent = `Could not load data: ${err.message}. The server may be waking up, so wait a minute and reload.`;
     console.error(err);
     return;
   }
