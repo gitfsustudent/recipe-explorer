@@ -84,7 +84,7 @@ h1 { margin: 0; font-family: var(--script); font-weight: 400; font-size: 44px; t
   padding: 2px 9px; font-size: 12px; cursor: pointer; font-family: var(--body); }
 .chip:hover { background: var(--tan); }
 
-#dashboard { display: grid; grid-template-columns: 520px minmax(520px, 660px); gap: 18px; align-items: start; }
+#dashboard { display: grid; grid-template-columns: 520px minmax(0, 660px); gap: 18px; align-items: start; }
 .panel { background: var(--paper); border: 3px solid var(--ink); border-radius: 8px; padding: 12px 14px;
   box-shadow: 5px 5px 0 var(--ink); transition: opacity 0.2s; }
 .panel h2 { margin: 0 0 8px; font-family: var(--head); font-weight: 700; font-size: 17px;
@@ -187,3 +187,6 @@ h1 { margin: 0; font-family: var(--script); font-weight: 400; font-size: 44px; t
 .tl-note { pointer-events: none; }
 .tl-note line { stroke: var(--ink); stroke-dasharray: 4 3; }
 .tl-note text { font-size: 11px; fill: var(--ink); }
+@media (max-width: 880px) {
+  #dashboard { grid-template-columns: minmax(0, 1fr); }
+}

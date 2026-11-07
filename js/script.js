@@ -645,7 +645,8 @@ function renderBook() {
   const items = state.book.map(id => byId.get(id)).filter(Boolean);
   const sub = items.length === 0
     ? "Open a recipe card and it will be saved here."
-    : `${items.length} saved ${items.length === 1 ? "recipe" : "recipes"}, newest first. Click one to reopen it.`;
+    : `${items.length} saved ${items.length === 1 ? "recipe" : "recipes"}, newest first. Click one to reopen it.` +
+      (items.length >= BOOK_MAX ? ` The book holds ${BOOK_MAX}, so saving a new recipe drops the oldest.` : "");
   const list = items.length === 0 ? "" :
     `<ul class="book-list">` +
     items.map(r =>
