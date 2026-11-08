@@ -54,6 +54,7 @@ Activate the virtual environment:
 
 \- Windows (PowerShell): `.venv\\Scripts\\Activate.ps1`
 (If PowerShell blocks the script, run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` first.)
+
 \- Windows (Command Prompt): `.venv\\Scripts\\activate.bat`
 
 \- macOS / Linux: `source .venv/bin/activate`
